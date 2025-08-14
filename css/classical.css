@@ -1,0 +1,13 @@
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: #fdf5e6;
+  color: #2e2e2e;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3e2723;
+}
+
+a {
+  color: #6b4e31;
+}
