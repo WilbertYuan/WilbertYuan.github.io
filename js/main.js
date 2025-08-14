@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $nav.classList.toggle('hide-menu', hideMenuIndex)
   }
 
-  // 初始化header
   const initAdjust = () => {
     adjustMenu(true)
     $nav.classList.add('show')
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * 首頁top_img底下的箭頭
    */
   const scrollDownInIndex = () => {
     const handleScrollToDest = () => {
@@ -51,8 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * 代碼
-   * 只適用於Hexo默認的代碼渲染
    */
   const addHighlightTool = () => {
     const highLight = GLOBAL_CONFIG.highlight
@@ -124,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const expandCode = e => e.currentTarget.classList.toggle('expand-done')
 
-    // 獲取隱藏狀態下元素的真實高度
     const getActualHeight = item => {
       const hiddenElements = new Map()
 
@@ -220,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * justified-gallery 圖庫排版
    */
 
   const fetchUrl = async url => {
@@ -384,7 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * 滾動處理
    */
   const scrollFn = () => {
     const $rightside = document.getElementById('rightside')
@@ -394,7 +387,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const isChatBtn = typeof chatBtn !== 'undefined'
     const isShowPercent = GLOBAL_CONFIG.percent.rightside
 
-    // 檢查文檔高度是否小於視窗高度
     const checkDocumentHeight = () => {
       if (document.body.scrollHeight <= innerHeight) {
         $rightside.classList.add('rightside-show')
@@ -403,7 +395,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return false
     }
 
-    // 如果文檔高度小於視窗高度,直接返回
     if (checkDocumentHeight()) return
 
     // find the scroll direction
@@ -470,7 +461,6 @@ document.addEventListener('DOMContentLoaded', () => {
       $tocPercentage = $cardTocLayout.querySelector('.toc-percentage')
       isExpand = $cardToc.classList.contains('is-expand')
 
-      // toc元素點擊
       const tocItemClickFn = e => {
         const target = e.target.closest('.toc-link')
         if (!target) return
@@ -497,7 +487,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 處理 hexo-blog-encrypt 事件
       $cardToc.style.display = 'block'
     }
 
@@ -663,7 +652,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * menu
-   * 側邊欄sub-menu 展開/收縮
    */
   const clickFnOfSubMenu = () => {
     const handleClickOfSubMenu = e => {
@@ -677,7 +665,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * 手机端目录点击
    */
   const openMobileMenu = () => {
     const toggleMenu = document.getElementById('toggle-menu')
@@ -686,7 +673,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
- * 複製時加上版權信息
  */
   const addCopyright = () => {
     const { limitCount, languages } = GLOBAL_CONFIG.copyright
@@ -709,7 +695,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * 網頁運行時間
    */
   const addRuntime = () => {
     const $runtimeCount = document.getElementById('runtimeshow')
@@ -720,7 +705,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * 最後一次更新時間
    */
   const addLastPushDate = () => {
     const $lastPushDateItem = document.getElementById('last-push-date')
@@ -932,7 +916,6 @@ document.addEventListener('DOMContentLoaded', () => {
   refreshFn()
   unRefreshFn()
 
-  // 處理 hexo-blog-encrypt 事件
   window.addEventListener('hexo-blog-decrypt', e => {
     forPostFn()
     window.translateFn.translateInitialization()
